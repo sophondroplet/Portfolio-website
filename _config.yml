@@ -7,7 +7,7 @@ baseurl: "/Portfolio-website"
 url: "https://sophondroplet.github.io"
 repository: "sophondroplet/Portfolio-website"
 search: true
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 include: 
@@ -62,3 +62,11 @@ defaults:
       sidebar:
         nav: projects-nav
       toc: true
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
