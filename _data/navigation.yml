@@ -1,0 +1,29 @@
+# Main navigation links
+main:
+  - title: "Home"
+    url: "/"
+  - title: "About"
+    url: "/about/"
+  - title: "Projects"
+    url: "/projects/"
+  - title: "Experiences"
+    url: "/experiences/"
+
+# Project nagivation links
+projects-nav:
+  - title: "Antenna Tracker"
+    url: /projects/project1/
+  - title: "CNC_drawings_machine"
+    url: /projects/project2/
+  - title: "Project 3"
+    url: /projects/project3/
+
+
+# Footer links
+footer:
+  - title: "Privacy Policy"
+    url: "/privacy/"
+  - title: "Terms of Service"
+    url: "/terms/"
+  - title: "Sitemap"
+    url: "/sitemap/"
