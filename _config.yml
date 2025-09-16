@@ -3,7 +3,7 @@ name: "Lek Man"
 description: >- # this means to ignore newlines until "baseurl:"
   "Welcome to my portfolio website. 
   Here you can find my projects and learn more about me."
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/Portfolio-website"
 url: "https://sophondroplet.github.io"
 repository: "sophondroplet/Portfolio-website"
 search: true
