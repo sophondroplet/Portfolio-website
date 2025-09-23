@@ -1,0 +1,30 @@
+---
+// empty front matter: required so Jekyll will compile this file
+---
+@import "minimal-mistakes";   
+
+body:not(.anetenna_tracker) .page__hero--overlay {
+  min-height: 50vh !important;
+  background-position: center top !important;
+  display: flex;
+  justify-content: left;  /* horizontal center */
+  align-items: center;      /* vertical center */
+  text-align: left;       /* center the text inside */
+}
+
+.sidebar__right .toc {
+  position: sticky;
+  top: 2rem;   /* distance from top of the viewport */
+  align-self: start;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;  /* let it scroll internally if it gets too tall */
+}
+
+// make the inner wrapper flex-friendly
+// .page__hero--overlay .wrapper {
+//   width: 100%;
+//   max-width: 60rem;  // control width of text block
+// }
+
+
+

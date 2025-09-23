@@ -1,7 +1,5 @@
 ---
-title: "CNC drawing machine"
+title: "Camera gimbal"
 layout: single
 permalink: /projects/project2/
 ---
-
-# CNC drawing machine

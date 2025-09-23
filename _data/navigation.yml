@@ -8,16 +8,31 @@ main:
     url: "/projects/"
   - title: "Experiences"
     url: "/experiences/"
+  - title: "CV"
+    url: "/cv/"
 
 # Project nagivation links
 projects-nav:
   - title: "Antenna Tracker"
     url: /projects/project1/
-  - title: "CNC_drawings_machine"
+  - title: "Camera gimbal"
     url: /projects/project2/
-  - title: "Project 3"
+  - title: "Quadcopter drone"
     url: /projects/project3/
+  - title: "PID ball balancing robot"
+    url: /projects/project4/
+  - title: "CNC drawing robot"
+    url: /projects/project5/
 
+experiences-nav:
+  - title: "Student UAS competition"
+    url: /experiences/SUAS/
+  - title: "Triton UAS club"
+    url: /experiences/TUAS/
+  - title: "Mechanical Engineering Club founder"
+    url: /experiences/MEC/
+  - title: "GreendeckVR competition"
+    url: /experiences/GreendeckVR/
 
 # Footer links
 footer:

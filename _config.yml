@@ -13,28 +13,36 @@ minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "n
 include: 
   - "_pages"
 
+#custom css
+# custom_css: assets/css/main.css
+
+# sass:
+#   sass_dir: _sass
+#   style: compressed
+
 #author profile
 author:
   name: "Lek Man"
-  avatar: "/assets/images/profile-avatar.jpg" # Path to an image in your repo
-  bio: "I'm a developer and researcher passionate about building cool projects. Welcome to my portfolio!"
-  location: "Your City, Country"
+  avatar: "/assets/images/profile/me3.jpg" # Path to an image in your repo
+  bio: >-
+    Aerospace Engineering undergraduate at UC San Diego, 
+    passionate about building robots, drones, and mechatronic 
+    systems. I enjoy turning ideas into functional machines through 
+    projects, competitions, and collaborations. Welcome to my 
+    portfolio!
+  location: "9450 Gilman Dr., 
+   La Jolla"
   links:
-    - label: "Email"
+    - label: "Email: manmanleklek@gmail.com"
       icon: "fas fa-fw fa-envelope"
-      url: "mailto:your.email@example.com"
-    - label: "GitHub"
+      url: "manmanleklek@gmail.com"
+    - label: "GitHub: sophondroplet"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/yourusername"
+      url: "https://github.com/sophondroplet"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/yourusername"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter"
-      url: "https://twitter.com/yourusername"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://yourwebsite.com"
+  
 
 # Defaults
 defaults:
@@ -62,6 +70,16 @@ defaults:
       sidebar:
         nav: projects-nav
       toc: true
+      toc_sticky: true
+
+  - scope:
+      path: "_pages/experiences"  
+    values:
+      layout: single
+      sidebar:
+        nav: experiences-nav
+      toc: true
+      toc_sticky: true
 
 plugins:
   - jekyll-paginate
