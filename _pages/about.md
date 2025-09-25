@@ -73,7 +73,7 @@ For full demos and galleries, visit the Experiences and Projects sections:
 ## If you'd like to dig deeper:
 
 <div style="text-align: left; padding: 1rem 0;">
-  <a href="{{ '/CV' | relative_url }}" class="btn btn--primary" style="display:inline-block; margin: 0 5px;">CV</a>
+  <a href="{{ '/cv' | relative_url }}" class="btn btn--primary" style="display:inline-block; margin: 0 5px;">CV</a>
   <a href="{{ '/experiences' | relative_url }}" class="btn btn--primary" style="display:inline-block; margin: 0 5px;">My Experiences</a>
   <a href="{{ '/projects' | relative_url }}" class="btn btn--primary" style="display:inline-block; margin: 0 5px;">My Projects</a>
 </div>
