@@ -1,5 +1,5 @@
 ---
-title: "MEC"
+title: "Mechanical Engineering Club"
 layout: single
 permalink: /experiences/MEC/
 toc: true
@@ -7,15 +7,19 @@ toc_sticky: true
 header:
   overlay_image: /assets/images/MEC/MEC_gp_hori.jpg  
   overlay_filter: 0.5  # Opacity of black overlay (0 to 1)
-  actions:  # Optional call-to-action buttons
-    - label: "SUAS competiton site"
-      url: "https://suas-competition.org/"
+  # actions:  # Optional call-to-action buttons
+  #   - label: "MEC site"
+  #     url: "https://suas-competition.org/"
 
 galleryMECMMB:
+  - url: /assets/images/MEC/MECMMB1.png
+    image_path: /assets/images/MEC/MECMMB1.png
   - url: /assets/images/MEC/MECMMB2.jpg
     image_path: /assets/images/MEC/MECMMB2.jpg
   - url: /assets/images/MEC/MECMMB3.jpg
     image_path: /assets/images/MEC/MECMMB3.jpg
+  - url: /assets/images/MEC/MECMMB4.jpg
+    image_path: /assets/images/MEC/MECMMB4.jpg
 
 galleryMECOM:
   - url: /assets/images/MEC/MEom5.jpg
@@ -110,10 +114,14 @@ I implemented foundational systems to ensure operational excellence:
 ## Key Projects and Technical Growth
 
 ### Mechatronics Breakthrough
+
+
 Collaborated with a programming-savvy peer to create an automated robot turret, marking my introduction to:
 - Arduino microcontroller programming
 - Integration of mechanical and electronic systems
 - Interdisciplinary project management
+
+<a href="{{ '/projects/project5' | relative_url }}" class="btn btn--primary">More details</a>
 
 {% include gallery id="galleryMECTR" layout="half" caption="First mechatronics project -- robot turret" %}
 
@@ -151,7 +159,7 @@ This special event marked an exciting partnership between the Mechanical Enginee
 
 During this school-wide STEM celebration, the Mechanical Engineering Club took center stage with interactive demonstrations and project showcases. We designed engaging activities that made mechanical engineering principles accessible to students across all grade levels. Club members presented working models of their projects, explaining the underlying physics and engineering concepts in approachable terms. The event served as both an educational opportunity for the wider school community and a successful recruitment tool, generating increased interest in mechanical engineering among students who might not have previously considered joining technical clubs.
 
-{% include gallery id="galleryMECSP" layout="half" caption="MEC Bridge collaboraion" %}
+{% include gallery id="galleryMECSP" layout="half" caption="Sci-Pi week (school event) presentation" %}
 
 ### MEC open morning
 

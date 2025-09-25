@@ -17,22 +17,27 @@ projects-nav:
     url: /projects/project1/
   - title: "Camera gimbal"
     url: /projects/project2/
-  - title: "Quadcopter drone"
+  - title: "CNC drawing machine"
     url: /projects/project3/
   - title: "PID ball balancing robot"
+    url: /projects/project6/
+  - title: "Quadcopter projects"
     url: /projects/project4/
-  - title: "CNC drawing robot"
+  - title: "Robot Turret"
     url: /projects/project5/
+  
 
 experiences-nav:
   - title: "Student UAS competition"
     url: /experiences/SUAS/
-  - title: "Triton UAS club"
-    url: /experiences/TUAS/
   - title: "Mechanical Engineering Club founder"
     url: /experiences/MEC/
-  - title: "GreendeckVR competition"
-    url: /experiences/GreendeckVR/
+  # - title: "GreendeckVR competition"
+  #   url: /experiences/GreendeckVR/
+  # - title: "Triton UAS club"
+  #   url: /experiences/TUAS/
+  # - title: "CYC motors internship"
+  #   url: /experiences/TUAS/
 
 # Footer links
 footer:

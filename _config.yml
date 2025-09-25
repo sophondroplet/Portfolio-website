@@ -39,9 +39,9 @@ author:
     - label: "GitHub: sophondroplet"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/sophondroplet"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/yourusername"
+    # - label: "LinkedIn"
+    #   icon: "fab fa-fw fa-linkedin"
+    #   url: "https://www.linkedin.com/in/yourusername"
   
 
 # Defaults

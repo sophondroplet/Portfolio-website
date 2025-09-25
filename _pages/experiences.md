@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Experiences/Awards
+title: Experiences
 permalink: /experiences/
 sidebar:
   title: "Experinces"
@@ -23,9 +23,28 @@ galleryMISSIONPREP:
     image_path: /assets/images/SUAS/SUAS18.jpg
     alt: "placeholder image 18"
     title: "Image 18 title caption"  
+
+classes: wide
+
+feature_row:
+  - image_path: /assets/images/SUAS/SUAS13.jpg
+    alt: "placeholder image 2"
+    title: "Top 25% - Student UAS competition"
+    excerpt: "Participated in the international Student Unmanned Aerial Systems competition and achieved top 25% ranking against university-level teams."
+    url: "/experiences/SUAS"
+    btn_label: "See More"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/MEC/MEC_group_photo.jpg
+    title: "Founder - Mechanical Engineering Club"
+    excerpt: "Transformed a struggling Marble Run club into a thriving engineering institution with 20+ members and $7,200 annual budget. Spearheaded projects from automated robot turrets to large-scale marble runs while establishing the club as a permanent STEM fixture through strategic partnerships and school-wide exhibitions."
+    url: "/experiences/MEC"
+    btn_label: "See More"
+    btn_class: "btn--primary"
 ---
 
-## 🛩️ Student Unmanned Aerial Systems Competiton | UCSD | June 2025
+{% include feature_row type="left" %}
+
+<!-- ## 🛩️ Student Unmanned Aerial Systems Competiton | UCSD | June 2025
 
 <a href="{{ '/experiences/SUAS' | relative_url }}" class="btn btn--primary">Learn More</a>
 
@@ -64,4 +83,4 @@ Delivered a talk on **“Empowering Learning”** to educators and administrator
 ## 🏅 Awards & Recognition  
 - **SUAS Competition 2025** – Placed in top 25% worldwide  
 - **Cayley Contest 2022** – Top 25% globally, school grade champion  
-- **Greendeck VR Champion 2022** – Technological & Higher Education Institute of HK  
+- **Greendeck VR Champion 2022** – Technological & Higher Education Institute of HK   -->
