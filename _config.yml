@@ -3,8 +3,8 @@ name: "Lek Man"
 description: >- # this means to ignore newlines until "baseurl:"
   "Welcome to my portfolio website. 
   Here you can find my projects and learn more about me."
-baseurl: "/Portfolio-website"
-url: "lekman.info"
+baseurl: ""
+url: "https://lekman.info"
 repository: "sophondroplet/Portfolio-website"
 search: true
 remote_theme: "mmistakes/minimal-mistakes"
