@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if page.translate_no %}
+    <meta name="google" content="notranslate">
+    {% endif %}
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/resume.css' | relative_url }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  </head>
+  <body {% if page.translate_no %}class="notranslate" translate="no"{% endif %}>
+    <main class="resume-sheet">
+      {{ content }}
+    </main>
+    <script>
+      (function () {
+        window.exportResumePdf = function (filename) {
+          var sheet = document.querySelector(".resume-sheet");
+          if (!sheet) return;
+          if (!window.html2pdf) {
+            window.print();
+            return;
+          }
+
+          var oldTitle = document.title;
+          var oldScrollX = window.pageXOffset || 0;
+          var oldScrollY = window.pageYOffset || 0;
+          window.scrollTo(0, 0);
+          document.title = " ";
+          document.body.classList.add("pdf-exporting");
+
+          var options = {
+            margin: [12, 12, 12, 12],
+            filename: filename || "resume.pdf",
+            image: { type: "jpeg", quality: 0.98 },
+            html2canvas: {
+              scale: 2,
+              useCORS: true,
+              backgroundColor: "#ffffff",
+              scrollX: 0,
+              scrollY: 0,
+              windowWidth: Math.max(document.documentElement.scrollWidth, document.body.scrollWidth),
+              windowHeight: Math.max(document.documentElement.scrollHeight, document.body.scrollHeight)
+            },
+            jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+            pagebreak: { mode: ["css", "legacy"] }
+          };
+
+          window.html2pdf()
+            .set(options)
+            .from(sheet)
+            .save()
+            .then(function () {
+              document.body.classList.remove("pdf-exporting");
+              document.title = oldTitle;
+              window.scrollTo(oldScrollX, oldScrollY);
+            })
+            .catch(function () {
+              document.body.classList.remove("pdf-exporting");
+              document.title = oldTitle;
+              window.scrollTo(oldScrollX, oldScrollY);
+              window.print();
+            });
+        };
+      })();
+    </script>
+  </body>
+</html>

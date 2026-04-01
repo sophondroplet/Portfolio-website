@@ -1,4 +1,4 @@
----
+﻿---
 layout: single
 title: Experiences
 permalink: /experiences/
@@ -33,24 +33,30 @@ feature_row:
     excerpt: "Participated in the international Student Unmanned Aerial Systems competition and achieved top 25% ranking against university-level teams."
     url: "/experiences/SUAS"
     btn_label: "See More"
-    btn_class: "btn--primary"
+    btn_class: "btn--primary notranslate"
   - image_path: /assets/images/MEC/MEC_group_photo.jpg
     title: "Founder - Mechanical Engineering Club"
     excerpt: "Transformed a struggling Marble Run club into a thriving engineering institution with 20+ members and $7,200 annual budget. Spearheaded projects from automated robot turrets to large-scale marble runs while establishing the club as a permanent STEM fixture through strategic partnerships and school-wide exhibitions."
     url: "/experiences/MEC"
     btn_label: "See More"
-    btn_class: "btn--primary"
+    btn_class: "btn--primary notranslate"
+  - image_path: /assets/images/ERL/MEpresentingatERLWorshop.jpg
+    title: "UCSD Existenial Robotics Lab - workshop presenter"
+    excerpt: "Presented robotics frame transformation concepts at an Existential Robotics Lab workshop and contributed to technical discussions during the program."
+    url: "/experiences/ERL"
+    btn_label: "See More"
+    btn_class: "btn--primary notranslate"
 ---
 
 {% include feature_row type="left" %}
 
-<!-- ## 🛩️ Student Unmanned Aerial Systems Competiton | UCSD | June 2025
+<!-- ## ðŸ›©ï¸ Student Unmanned Aerial Systems Competiton | UCSD | June 2025
 
 <a href="{{ '/experiences/SUAS' | relative_url }}" class="btn btn--primary">Learn More</a>
 
 - Placed in top 25% worldwide  
 
-## 🚀 Triton Unmanned Aerial Systems | UCSD | 2024–Present  
+## ðŸš€ Triton Unmanned Aerial Systems | UCSD | 2024â€“Present  
 - Built airframes from composite materials (fiberglass & carbon fiber)  
 - Developed firmware for ESCs and antenna trackers  
 - Integrated CV-based localization into UAV missions  
@@ -61,26 +67,26 @@ feature_row:
 
 ---
 
-## 🛠 Founder & President – Mechanical Engineering Club | CAIS | 2022–2024  
+## ðŸ›  Founder & President â€“ Mechanical Engineering Club | CAIS | 2022â€“2024  
 - Founded and led 30+ member club, organized school-wide projects  
 - Oversaw budgets, recruitment, and communication with faculty  
 - Promoted mechanical engineering through hands-on events  
 
 ---
 
-## 🎤 Student Presenter – ACAMIS Tech Conference | 2023  
-Delivered a talk on **“Empowering Learning”** to educators and administrators, sharing insights as a student innovator.  
+## ðŸŽ¤ Student Presenter â€“ ACAMIS Tech Conference | 2023  
+Delivered a talk on **â€œEmpowering Learningâ€** to educators and administrators, sharing insights as a student innovator.  
 
 ---
 
-## 🏆 Greendeck VR Competition | 2021–2022  
+## ðŸ† Greendeck VR Competition | 2021â€“2022  
 - Designed a 3D interactive model of the Green Deck park in Hong Hum  
 - Worked with a team of 4 using **Unity** and **SketchUp**  
 - Awarded **Champion among 12 schools**  
 
 ---
 
-## 🏅 Awards & Recognition  
-- **SUAS Competition 2025** – Placed in top 25% worldwide  
-- **Cayley Contest 2022** – Top 25% globally, school grade champion  
-- **Greendeck VR Champion 2022** – Technological & Higher Education Institute of HK   -->
+## ðŸ… Awards & Recognition  
+- **SUAS Competition 2025** â€“ Placed in top 25% worldwide  
+- **Cayley Contest 2022** â€“ Top 25% globally, school grade champion  
+- **Greendeck VR Champion 2022** â€“ Technological & Higher Education Institute of HK   -->
