@@ -1,0 +1,184 @@
+---
+---
+
+@page {
+  size: A4;
+  margin: 1.2cm;
+}
+
+:root {
+  --text: #111;
+  --muted: #444;
+  --line: #d9d9d9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #f3f4f6;
+  color: var(--text);
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.28;
+}
+
+.resume-sheet {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 1rem auto;
+  padding: 1.4cm;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03), 0 10px 28px rgba(0, 0, 0, 0.09);
+}
+
+h1 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: center;
+}
+
+h2 {
+  margin: 1rem 0 0.34rem;
+  padding-bottom: 0.16rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 12.6px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+h3 {
+  margin: 0.42rem 0 0.12rem;
+  font-size: 11.4px;
+}
+
+p {
+  margin: 0.2rem 0 0.36rem;
+  font-size: 10.9pt;
+}
+
+ul {
+  margin: 0.14rem 0 0.42rem 1.05rem;
+  padding: 0;
+}
+
+li {
+  margin: 0.1rem 0;
+  font-size: 10.8pt;
+}
+
+a {
+  color: inherit;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 0.38rem 0 0.45rem;
+}
+
+.contact {
+  margin-top: 0.24rem;
+  margin-bottom: 0.48rem;
+  color: var(--muted);
+  font-size: 10pt;
+  text-align: center;
+}
+
+.role-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.role-line strong {
+  font-size: 10.9pt;
+}
+
+.meta {
+  white-space: nowrap;
+  color: var(--muted);
+  font-size: 9.8pt;
+}
+
+ul li strong {
+  font-size: 10.9pt;
+}
+
+.compact li {
+  margin: 0.06rem 0;
+}
+
+.role-line {
+  margin-top: 0.14rem;
+}
+
+@media screen and (max-width: 920px) {
+  html,
+  body {
+    background: #fff;
+  }
+
+  .resume-sheet {
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    box-shadow: none;
+    padding: 0.7rem;
+  }
+}
+
+@media print {
+  html,
+  body {
+    background: #fff;
+  }
+
+  .resume-sheet {
+    box-shadow: none;
+    margin: 0;
+    width: 100%;
+    min-height: 0;
+    padding: 0;
+  }
+}
+
+body.pdf-exporting {
+  background: #fff !important;
+}
+
+body.pdf-exporting .resume-sheet {
+  box-shadow: none !important;
+  margin: 0 !important;
+  width: 186mm !important;
+  min-height: auto !important;
+  padding: 0 !important;
+}
+
+body.pdf-exporting h1,
+body.pdf-exporting h2,
+body.pdf-exporting h3,
+body.pdf-exporting .role-line,
+body.pdf-exporting p,
+body.pdf-exporting ul,
+body.pdf-exporting li {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+body.pdf-exporting p,
+body.pdf-exporting li {
+  orphans: 3;
+  widows: 3;
+}
+
+body.pdf-exporting ul,
+body.pdf-exporting .role-line {
+  break-inside: avoid-page;
+  page-break-inside: avoid;
+}

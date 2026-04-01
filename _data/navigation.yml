@@ -13,6 +13,8 @@ main:
 
 # Project nagivation links
 projects-nav:
+  - title: "10-inch autonomous quadcopter"
+    url: /projects/project7/
   - title: "Antenna Tracker"
     url: /projects/project1/
   - title: "Camera gimbal"
@@ -23,6 +25,8 @@ projects-nav:
     url: /projects/project6/
   - title: "Quadcopter projects"
     url: /projects/project4/
+  - title: "RoboCar (Autonomous)"
+    url: /projects/project8/
   - title: "Robot Turret"
     url: /projects/project5/
   
@@ -30,6 +34,8 @@ projects-nav:
 experiences-nav:
   - title: "Student UAS competition"
     url: /experiences/SUAS/
+  - title: "ERL workshop presenter"
+    url: /experiences/ERL/
   - title: "Mechanical Engineering Club founder"
     url: /experiences/MEC/
   # - title: "GreendeckVR competition"

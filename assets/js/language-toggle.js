@@ -42,16 +42,14 @@
       "Portfolio": "\u4f5c\u54c1\u96c6",
       "portfolio": "\u4f5c\u54c1\u96c6",
       "About me": "\u5173\u4e8e\u6211",
-      "Highlights": "\u4eae\u70b9",
-      "See More": "\u67e5\u770b\u66f4\u591a"
+      "Highlights": "\u4eae\u70b9"
     },
     en: {
       "\u55e8\uff01\u6211\u662f\u6587\u529b": HOME_TITLE_EN,
       "Lek \u7684\u4f5c\u54c1\u96c6": "Lek's Portfolio",
       "\u4f5c\u54c1\u96c6": "Portfolio",
       "\u5173\u4e8e\u6211": "About me",
-      "\u4eae\u70b9": "Highlights",
-      "\u67e5\u770b\u66f4\u591a": "See More"
+      "\u4eae\u70b9": "Highlights"
     }
   };
 
@@ -104,7 +102,8 @@
   function createToggleButton(targetLang) {
     const button = document.createElement("button");
     button.type = "button";
-    button.className = "lang-toggle-btn";
+    button.className = "lang-toggle-btn notranslate";
+    button.setAttribute("translate", "no");
     button.textContent = targetLang === ZH ? "\u4e2d\u6587" : "English";
     button.setAttribute("aria-label", targetLang === ZH ? "Switch language to Chinese" : "Switch language to English");
     button.addEventListener("click", () => setLanguage(targetLang));
@@ -141,6 +140,182 @@
     const raw = el.textContent.trim();
     if (!raw) return;
     if (map[raw]) el.textContent = map[raw];
+  }
+
+  function preserveFeatureRowLinks() {
+    document.querySelectorAll(".archive__item .btn, .feature__item .btn, a.btn--primary").forEach((a) => {
+      const anchor = a;
+      if (!anchor.dataset.originalHref) {
+        anchor.dataset.originalHref = anchor.getAttribute("href") || "";
+      }
+      if (
+        anchor.dataset.originalHref &&
+        (!anchor.getAttribute("href") || anchor.getAttribute("href").startsWith("javascript"))
+      ) {
+        anchor.setAttribute("href", anchor.dataset.originalHref);
+      }
+      anchor.style.pointerEvents = "auto";
+      anchor.style.cursor = "pointer";
+    });
+  }
+
+  function snapshotCardCtaLinks() {
+    const cards = Array.from(document.querySelectorAll(".feature__item, .archive__item"));
+    const map = [];
+
+    cards.forEach((card, index) => {
+      const btn = card.querySelector("a.btn, a.btn--primary");
+      const titleLink = card.querySelector(".archive__item-title a, h2 a, h3 a");
+      const href =
+        (btn && btn.getAttribute("href")) ||
+        (titleLink && titleLink.getAttribute("href")) ||
+        card.dataset.ctaHref ||
+        "";
+
+      if (href && !href.startsWith("javascript") && href !== "#") {
+        card.dataset.ctaHref = href;
+        map[index] = href;
+      }
+    });
+
+    try {
+      localStorage.setItem(`cta-map:${location.pathname}`, JSON.stringify(map));
+    } catch (e) {}
+  }
+
+  function getSavedCtaMap() {
+    try {
+      const raw = localStorage.getItem(`cta-map:${location.pathname}`);
+      const parsed = raw ? JSON.parse(raw) : [];
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function ensureFeatureButtonsExist(currentLang) {
+    const label = currentLang === ZH ? "\u67e5\u770b\u66f4\u591a" : "See More";
+    const savedMap = getSavedCtaMap();
+    Array.from(document.querySelectorAll(".feature__item, .archive__item")).forEach((card, index) => {
+      const body = card.querySelector(".archive__item-body");
+      if (!body) return;
+
+      const existingBtn = body.querySelector("a.btn, a.btn--primary");
+      const hrefFromCard = card.dataset.ctaHref || savedMap[index] || "";
+      const hrefFromBtn = existingBtn ? existingBtn.getAttribute("href") || "" : "";
+      const href = hrefFromBtn && !hrefFromBtn.startsWith("javascript") && hrefFromBtn !== "#" ? hrefFromBtn : hrefFromCard;
+      if (!href) return;
+
+      let fixedWrap = body.querySelector(".cta-fixed");
+      if (!fixedWrap) {
+        fixedWrap = document.createElement("p");
+        fixedWrap.className = "cta-fixed notranslate";
+        fixedWrap.setAttribute("translate", "no");
+        body.appendChild(fixedWrap);
+      }
+
+      let fixedBtn = fixedWrap.querySelector("a");
+      if (!fixedBtn) {
+        fixedBtn = document.createElement("a");
+        fixedBtn.className = "btn btn--primary notranslate";
+        fixedWrap.appendChild(fixedBtn);
+      }
+
+      fixedBtn.dataset.originalHref = href;
+      fixedBtn.setAttribute("href", href);
+      fixedBtn.textContent = label;
+      fixedBtn.style.pointerEvents = "auto";
+      fixedBtn.style.cursor = "pointer";
+
+      if (existingBtn && existingBtn !== fixedBtn) {
+        existingBtn.style.display = "none";
+      }
+    });
+  }
+
+  function repairFeatureButtonsFromCardLinks() {
+    document.querySelectorAll(".feature__item, .archive__item").forEach((card) => {
+      const titleLink = card.querySelector(".archive__item-title a, h2 a, h3 a");
+      const btn = card.querySelector("a.btn, a.btn--primary");
+      if (!btn || !titleLink) return;
+
+      const href = btn.getAttribute("href") || "";
+      const titleHref = titleLink.getAttribute("href") || "";
+      if (!titleHref) return;
+
+      if (!btn.dataset.originalHref || btn.dataset.originalHref.startsWith("javascript")) {
+        btn.dataset.originalHref = titleHref;
+      }
+
+      if (!href || href.startsWith("javascript") || href === "#") {
+        btn.setAttribute("href", btn.dataset.originalHref || titleHref);
+      }
+    });
+  }
+
+  function stabilizeActionButtons(currentLang) {
+    const seeMoreEn = "See More";
+    const seeMoreZh = "\u67e5\u770b\u66f4\u591a";
+    const normalize = (v) => (v || "").replace(/\s+/g, " ").trim();
+    const knownLabels = new Set([seeMoreEn, seeMoreZh, "Learn More", "\u4e86\u89e3\u66f4\u591a"]);
+
+    document.querySelectorAll(".archive__item .btn, .feature__item .btn, a.btn--primary").forEach((a) => {
+      const anchor = a;
+      anchor.classList.add("notranslate");
+
+      if (!anchor.dataset.originalHref) {
+        anchor.dataset.originalHref = anchor.getAttribute("href") || "";
+      }
+
+      const originalHref = anchor.dataset.originalHref;
+      if (originalHref && (!anchor.getAttribute("href") || anchor.getAttribute("href").startsWith("javascript"))) {
+        anchor.setAttribute("href", originalHref);
+      }
+
+      const label = normalize(anchor.textContent);
+      if (knownLabels.has(label)) {
+        anchor.textContent = currentLang === ZH ? seeMoreZh : seeMoreEn;
+      }
+    });
+  }
+
+  function attachButtonClickFallback() {
+    document.addEventListener(
+      "click",
+      (event) => {
+        const clicked = event.target;
+        if (!clicked || !clicked.closest) return;
+
+        const card = clicked.closest(".feature__item, .archive__item");
+        if (!card) return;
+
+        const asButton = clicked.closest("a.btn, a.btn--primary");
+        const text = (clicked.textContent || "").replace(/\s+/g, " ").trim();
+        const isSeeMoreText = text === "See More" || text === "\u67e5\u770b\u66f4\u591a";
+
+        if (!asButton && !isSeeMoreText) return;
+
+        const titleLink = card.querySelector(".archive__item-title a, h2 a, h3 a");
+        const cardHref = card.dataset.ctaHref || "";
+        if (!titleLink && !cardHref) return;
+
+        const targetHref =
+          (asButton && (asButton.dataset.originalHref || asButton.getAttribute("href"))) ||
+          (titleLink ? titleLink.getAttribute("href") : "") ||
+          cardHref;
+
+        if (!targetHref || targetHref.startsWith("javascript") || targetHref === "#") {
+          event.preventDefault();
+          if (cardHref) window.location.href = cardHref;
+          return;
+        }
+
+        if (asButton) {
+          asButton.setAttribute("href", targetHref);
+        }
+      },
+      true
+    );
   }
 
   function replaceNameText(el, currentLang) {
@@ -185,7 +360,7 @@
 
     document
       .querySelectorAll(
-        ".site-title, .author__name, .author__bio, .page__meta, .page__title, .btn, .page__content p, .page__content li, .page__content h1, .page__content h2, .page__content h3, .archive__item-title, .archive__item-excerpt"
+        ".site-title, .author__name, .author__bio, .page__meta, .page__title, .page__content h1, .page__content h2, .page__content h3, .archive__item-title, .archive__item-excerpt"
       )
       .forEach((el) => {
       setTextIfMapped(el, uiMap);
@@ -203,6 +378,12 @@
         heroTitle.textContent = HOME_TITLE_EN;
       }
     }
+
+    preserveFeatureRowLinks();
+    snapshotCardCtaLinks();
+    repairFeatureButtonsFromCardLinks();
+    stabilizeActionButtons(current);
+    ensureFeatureButtonsExist(current);
   }
 
   function suppressGoogleBanner() {
@@ -228,6 +409,7 @@
 
   function startPostTranslateFixes() {
     suppressGoogleBanner();
+    snapshotCardCtaLinks();
     enforceOverrides();
 
     const overrideDelays = [600, 1400, 2600, 4200];
@@ -271,6 +453,7 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     injectPinnedLanguageButton();
+    attachButtonClickFallback();
     startPostTranslateFixes();
   });
 })();

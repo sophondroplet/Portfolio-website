@@ -20,6 +20,55 @@ body:not(.anetenna_tracker) .page__hero--overlay {
   overflow-y: auto;  /* let it scroll internally if it gets too tall */
 }
 
+.lang-toggle-pin {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.35rem;
+}
+
+.lang-toggle-btn {
+  border: 1px solid #cfd4da;
+  background: #fff;
+  color: #2a2f36;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  line-height: 1;
+  font-weight: 600;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+}
+
+#google_translate_element,
+.goog-te-banner-frame,
+iframe.goog-te-banner-frame,
+iframe[class*="VIpgJd-ZVi9od"],
+.VIpgJd-ZVi9od-ORHb,
+#goog-gt-tt {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+html,
+body,
+body.skiptranslate,
+html.translated-ltr,
+html.translated-rtl,
+body.translated-ltr,
+body.translated-rtl {
+  top: 0 !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.archive__item .btn,
+.feature__item .btn,
+a.btn--primary {
+  pointer-events: auto !important;
+  z-index: 5;
+}
+
 // make the inner wrapper flex-friendly
 // .page__hero--overlay .wrapper {
 //   width: 100%;
