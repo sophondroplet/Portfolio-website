@@ -9,7 +9,7 @@ author_profile: false
 classes: wide
 
 feature_row:
-  - image_path: assets/images/10in_quad/Valiant_upgrade_thumbnail.png
+  - image_path: assets/images/10in_quad/Landing_legv1_2.jpeg
     alt: "10-inch autonomous quadcopter"
     title: "10-inch autonomous quadcopter"
     excerpt: "Designed a 10-inch quad from scratch with custom carbon-fiber frame, 8S powertrain, and full ArduPilot tuning from first stable flight to guided autonomous operation."

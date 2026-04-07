@@ -5,7 +5,7 @@ permalink: /projects/project7/
 toc: true
 toc_sticky: true
 header:
-  overlay_image: /assets/images/10in_quad/Valiant_upgrade_thumbnail.png
+  overlay_image: /assets/images/10in_quad/10in_quad_CAD_3dview.png
   overlay_filter: 0.5
 
 galleryCAD:
