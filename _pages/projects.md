@@ -72,6 +72,13 @@ feature_row:
     url: "/projects/project9"
     btn_label: "See More"
     btn_class: "btn--primary notranslate"
+  - image_path: assets/images/placeholder.png
+    alt: "Test Project Placeholder"
+    title: "Test Project"
+    excerpt: "This is a placeholder for a new test project."
+    url: "/projects/project10"
+    btn_label: "See More"
+    btn_class: "btn--primary notranslate"
 ---
 I've worked on a range of projects that blend mechanical design, electronics, and programming. Here are a few highlights:
 
