@@ -19,6 +19,8 @@ projects-nav:
     url: /projects/project1/
   - title: "Camera gimbal"
     url: /projects/project2/
+  - title: "Fixed-Wing to VTOL Conversion"
+    url: /projects/project9/
   - title: "CNC drawing machine"
     url: /projects/project3/
   - title: "PID ball balancing robot"

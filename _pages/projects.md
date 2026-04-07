@@ -65,6 +65,13 @@ feature_row:
     url: "/projects/project5"
     btn_label: "See More"
     btn_class: "btn--primary notranslate"
+  - image_path: assets/images/vtol_conversion/vtol_conversion_thumbnail.png
+    alt: "Fixed-Wing to VTOL Conversion"
+    title: "Fixed-Wing to VTOL Conversion"
+    excerpt: "Converting a fixed-wing RC plane into a VTOL aircraft with custom mechanical designs, new powertrain, and a Pixhawk flight controller."
+    url: "/projects/project9"
+    btn_label: "See More"
+    btn_class: "btn--primary notranslate"
 ---
 I've worked on a range of projects that blend mechanical design, electronics, and programming. Here are a few highlights:
 
